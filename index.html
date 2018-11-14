@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Cenas Navideñas</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="text">
-        <h1>Cenas<br>Navideñas<br>2017</h1>
-        <p class="amount">
-            <span class="amount__collected">$4,321</span>
-            <span class="amount__goal">Recolectados<br>Meta: $50,000</span>
-        </p>
-        <p class="legend">
-            Coopera en efectivo con tu Office Manager Favorita.<br>
-            También puedes ayudar preparando y repartiendo cenas a las familias que más las necesitan.
-        </p>
-    </div>
-        
-    <div class="photos">
-        <div class="photos__group">
-            <img src="img/senora.jpg" alt="">
-            <img src="img/don.jpg" alt="">
-            <img src="img/ninas.jpg" alt="">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:500,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <div class="content">
+        <div>
+          <h1><span>Cenas Navideñas 2018</span></h1>
+          <div class="amount">
+            <span class="collected">$54,321</span><br />
+            <span class="goal">Recolectados de $50,000</span>
+          </div>
+          <p class="legend">
+            Coopera en efectivo con tu Office Manager Favorita.<br />
+            También puedes ayudar preparando y repartiendo cenas a las familias
+            que más las necesitan.
+          </p>
         </div>
+      </div>
+      <div class="thanks">
+        <span class="thanks-label">¡Gracias!</span>
+        <marquee>
+          Arturo Ruiz, Diana Arvayo, José Carlos, Julio González, Julio
+          Samaniego, Karen García, Bla bla bla.
+        </marquee>
+      </div>
     </div>
-    
-    <span class="thanksto__label">¡Gracias!</span>
-    <span class="thanksto__names"><marquee>Arturo Ruiz, Diana Arvayo, José Carlos, Julio González, Julio Samaniego, Karen García, Bla bla bla.</marquee></span>
-
-    
-</body>
+    <div class="city-select">
+      <form action="">
+        <select name="" id="">
+          <option value="HMO">Hermosillo</option>
+          <option value="CUU">Chihuahua</option>
+          <option value="CDMX">Ciudad de México</option>
+        </select>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>

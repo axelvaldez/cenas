@@ -1,106 +1,161 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-    font-family: "Montserrat", sans-serif;
-    font-size: 36px;
-    line-height: 1.2;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: grid;
-    align-items: stretch;
-    grid-template-columns: 626px auto;
-    grid-template-rows: auto 148px;
-    grid-template-areas:
-        "photos text"
-        "thanks names";
-}
-
-.text{
-    background-color: #1c1c2d;
-    background-image: linear-gradient(135deg, #232338 0%, #1c1c2d 60%);
-    
-    padding: 0 40px;
-    grid-area: text;
-}
-.photos{
-    background: #FF5C54;
-    grid-area: photos;
-    overflow: hidden;
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
 }
 
-.photos__group{
-    width: 300%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    animation: photosslideshow 10s infinite;
-    position: relative;
-}
-.photos img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.layout {
+  height: 100vh;
+  display: grid;
+  align-items: stretch;
+  grid-template-rows: 10px auto 10px 100px;
 }
 
-@keyframes photosslideshow {
-    0%   { left: 0 }
-    33% { left: 0; }
-    34% { left: -100%; }
-    66% { left: -100%; }
-    67% { left: -200%; }
-    99% { left: -200%; }
-    100% { left: 0; }
+.content {
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 2 / 3;
+  animation: bgsize 60s infinite;
+
+  background: linear-gradient(
+      135.92deg,
+      rgba(106, 115, 82, 0.53) 2.25%,
+      rgba(43, 43, 47, 0.78) 100%
+    ),
+    url(img/arbolito.jpg);
+  /* background-position: center center; */
+}
+
+h1 {
+  font-size: 100px;
+}
+
+@keyframes bgsize {
+  0% {
+    background-size: 100% 100%, 100% 100%;
   }
-
-h1{
-    font-size: 120px;
-    line-height: 1;
-    margin: 80px 0 0;
-    text-transform: uppercase;
-    color: #FF5C54;
-    font-weight: 700;
+  50% {
+    background-size: 100% 100%, 120% 120%;
+  }
+  100% {
+    background-size: 100% 100%, 100% 100%;
+  }
 }
 
-p{
-    margin: 40px 0;
+.collected {
+  background: #fff;
+  color: #c12f50;
+  display: inline-block;
+  font-size: 150px;
+  font-weight: bold;
+  padding: 25px 50px;
+  position: relative;
 }
 
-.amount{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.amount__collected{
-    font-size: 180px;
-    font-weight: 700;
-    padding-right: 40px;
-}
-.amount__goal{
-    color: #FF5C54;
+.collected:before {
+  content: "";
+  width: 100%;
+  height: 10px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+  background-attachment: fixed;
 }
 
-.thanksto__label{
-    background: #FF5C54;
-    grid-area: thanks;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 56px;
-    text-transform: uppercase;
-    font-weight: 700;
+.goal {
+  color: #fff;
+  background: #c12f50;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: normal;
+  padding: 0 25px;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  top: -25px;
 }
-.thanksto__names{
-    white-space: nowrap;
-    background: #10101B;
-    grid-area: names;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    padding: 0 40px;
-    font-size: 56px;
+
+.legend {
+  width: 70%;
+  margin: 50px auto 0;
+}
+
+.thanks {
+  background: #fff;
+  color: #c12f50;
+  position: relative;
+  text-align: center;
+  grid-row: 4 / 5;
+}
+
+.thanks-label {
+  color: #fff;
+  background: #c12f50;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: normal;
+  padding: 0 25px;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  top: -30px;
+}
+
+marquee {
+  display: block;
+  position: relative;
+  top: -20px;
+}
+
+.city-select {
+  padding: 25px 50px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  display: none;
+}
+
+select {
+  font-size: 2rem;
 }
